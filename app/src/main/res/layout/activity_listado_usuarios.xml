@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Agrega los iconos aquí -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:padding="10dp"
+        android:background="@color/design_default_color_primary">
+
+        <ImageView
+            android:id="@+id/icon_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageView
+            android:id="@+id/icon_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_save"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageView
+            android:id="@+id/icon_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"/>
+    </LinearLayout>
+
+    <!-- Texto "Lista de usuarios" -->
+    <TextView
+        android:id="@+id/listausuarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:text="Lista de usuarios"
+        android:textSize="30dp" />
+
+    <!-- ListView para mostrar los usuarios -->
+    <ListView
+        android:id="@+id/datosusuarios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"/>
+
+</LinearLayout>
