@@ -4,40 +4,61 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListadoUsuariosActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_usuarios);
+
+        ImageView adduser = findViewById(R.id.icon_add);
+        ImageView updateuser = findViewById(R.id.icon_save);
+        ImageView deleteuser = findViewById(R.id.icon_delete);
+
+        adduser.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ListadoUsuariosActivity.this, UsuarioRegistroActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
+        updateuser.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(ListadoUsuariosActivity.this, "Actualizando registro", Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+
+        deleteuser.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(ListadoUsuariosActivity.this, "Usuario Eliminado", Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.icon_add) {
-            // Redirige a UsuarioRegistroActivity
-            Intent intent = new Intent(this, UsuarioRegistroActivity.class);
-            startActivity(intent);
-            return true;
-        } else if (item.getItemId() == R.id.icon_save) {
-            Toast.makeText(this, "Guardar", Toast.LENGTH_LONG).show();
-            return true;
-        } else if (item.getItemId() == R.id.icon_delete) {
-            Toast.makeText(this, "Eliminar", Toast.LENGTH_LONG).show();
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-    }
 
 }

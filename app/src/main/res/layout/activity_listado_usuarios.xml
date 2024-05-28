@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Agrega los iconos aquí -->
+    <!-- Agrega los iconos -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,9 +43,9 @@
         android:text="Lista de usuarios"
         android:textSize="30dp" />
 
-    <!-- ListView para mostrar los usuarios -->
-    <ListView
-        android:id="@+id/datosusuarios"
+    <!-- RecyclerView para mostrar los usuarios -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_list_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="5dp"/>

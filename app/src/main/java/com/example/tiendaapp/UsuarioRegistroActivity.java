@@ -1,5 +1,6 @@
 package com.example.tiendaapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +50,17 @@ public class UsuarioRegistroActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarUsuario();
+            }
+        });
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button backButton = findViewById(R.id.btnatras);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Inicia MainActivity al hacer clic en el botón "Volver al inicio"
+                Intent intent = new Intent(UsuarioRegistroActivity.this, com.example.tiendaapp.MainActivity.class);
+                startActivity(intent);
             }
         });
 
